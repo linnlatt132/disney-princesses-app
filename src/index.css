@@ -72,5 +72,15 @@ button:focus-visible {
 @import "tailwindcss";
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+.card-bg {
+  background: linear-gradient(
+    68.29deg,
+    #8c0303 40.61%,
+    #b24e42 76.06%,
+    #f1c8aa 95.76%
+  );
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
 }
