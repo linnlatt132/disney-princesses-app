@@ -1,6 +1,6 @@
 import SnowWhite from "../assets/images/princess/SnowWhite.svg?react";
 import { motion } from "framer-motion";
-import Bg from "../assets/images/SnowWhiteBG.svg?react";
+import Bg from "../assets/images/bg/SnowWhiteBG.svg?react";
 
 const Card = () => {
   const imgVariants = {
