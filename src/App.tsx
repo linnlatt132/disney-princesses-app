@@ -1,4 +1,6 @@
-import Home from "./components/Home";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import DetailPage from "./pages/DetailPage";
 
 function App() {
   return (
@@ -7,9 +9,10 @@ function App() {
     //   <p className="bg-red-200">3</p>
     //   Hello wrold 2
     // </div>
-    <>
-    <Home/>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/detail/:slug" element={<DetailPage />} />
+    </Routes>
   );
 }
 
