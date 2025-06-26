@@ -3,8 +3,8 @@ import Navbar from "./Navbar";
 
 const Home = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-white">
-      <div className="bg-[#E0DAEB]/60 h-160 w-300 rounded-2xl ">
+    <div className="flex items-center justify-center h-screen bg-black">
+      <div className="bg-white h-160 w-300 rounded-2xl ">
         <Navbar />
         <div className="flex w-ful space-x-90 pl-3 ">
           <Card />

@@ -1,4 +1,4 @@
-import SnowWhite from "../assets/images/SnowWhite.svg?react";
+import SnowWhite from "../assets/images/princess/SnowWhite.svg?react";
 import { motion } from "framer-motion";
 import Bg from "../assets/images/SnowWhiteBG.svg?react";
 
@@ -33,22 +33,22 @@ const Card = () => {
         <SnowWhite />
       </motion.div>
       <motion.div
-        className="flex flex-col absolute bottom-4 left-8 z-30 text-white"
+        className="flex flex-col absolute bottom-4 left-8 z-30 text-white w-70 text-start"
         variants={textVariants}
         transition={{ type: "tween", duration: 0.25 }}
       >
-        <p className="font-semibold text-[28px] ">Snow White</p>
+        <p className="font-semibold text-[24px] ">Snow White</p>
         <div className="space-x-2 flex items-center">
-          <span className="font-thin text-[16px]">Movie</span>
+          <span className="font-thin text-[14px]">Movie</span>
           <div className="rounded-full h-1 w-1 bg-white "></div>
-          <span className="text-[20px]">SnowWhite</span>
+          <span className="text-[16px]">Snow White</span>
         </div>
         <motion.span
           variants={readMoreVariants}
           transition={{ duration: 0.25 }}
           className="mt-1 text-start tracking-wider opacity-0 group-hover:opacity-100 transition-opacity text-sm font-thin font-mono "
         >
-          READ MORE&nbsp;&gt;
+          READ MORE &gt;
         </motion.span>
       </motion.div>
     </motion.button>
