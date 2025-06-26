@@ -21,7 +21,7 @@ const Card = () => {
       initial="rest"
       whileHover="hover"
       animate="rest"
-      className="relative h-70 mt-52 outline-none "
+      className="relative h-70 mt-52 outline-none hover:cursor-pointer"
     >
       <Bg className="absolute inset-0" />
       {/* image grow */}
@@ -30,7 +30,7 @@ const Card = () => {
         className="absolute -top-40 translate-x-1/4 origin-bottom z-20 "
         transition={{ type: "spring", stiffness: 160, damping: 12 }}
       >
-        <SnowWhite className="cursor-pointer" />
+        <SnowWhite />
       </motion.div>
       <motion.div
         className="flex flex-col absolute bottom-4 left-8 z-30 text-white"
