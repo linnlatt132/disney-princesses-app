@@ -1,5 +1,6 @@
 import SearchBar from "./SearchBar";
 import Logo from "../assets/images/DisneyLogo.png";
+import princesses from "../data/princesses";
 
 const Navbar = () => {
   return (
@@ -8,7 +9,7 @@ const Navbar = () => {
         <img src={Logo} alt="Logo" className="w-38" />
         <p className="text-3xl font-medium mt-2 text-[#4E164A]">Princesses</p>
       </div>
-      <SearchBar />
+      <SearchBar data={princesses} />
     </div>
   );
 };
