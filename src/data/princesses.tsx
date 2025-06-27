@@ -19,7 +19,7 @@ import ArielBg from "../assets/images/bg/ArielBG.svg?react";
 import ArielBg2 from "../assets/images/bg2/ArielBG2.svg?react";
 
 export interface Princess {
-  id: string;
+  id: number;
   name: string;
   slug: string;
   movieName: string;
@@ -32,14 +32,14 @@ export interface Princess {
 
 const princesses: Princess[] = [
   {
-    id: "rapunzel",
+    id: 1,
     name: "Rapunzel",
     slug: "rapunzel",
     movieName: "Tangled",
     personImg: <Rapunzel />,
     bgImg: <RapunzelBg />,
     bgImg2: <RapunzelBg2 />,
-    about: `Rapunzel has spent her entire life hidden in a tower, believing the outside world is too dangerous. Her seventy-foot, sun-kissed hair possesses magical healing power, a secret coveted by the manipulative Mother Gothel who poses as her guardian. Rapunzel is endlessly curious, painting every surface, reading, baking and charting the mysterious lanterns that appear on her birthday. When charming thief Flynn Rider stumbles into her tower, she seizes the chance to see those lights up close. Energetic, artistic and remarkably resilient, she turns frying pans into weapons, trusts her instincts over authority and discovers that the lanterns are really the kingdom’s tribute to its lost princess—herself.`,
+    about: 'Rapunzel has spent her life hidden in a tower, believing the outside world is dangerous. Her magical, seventy-foot hair has healing powers coveted by Mother Gothel, who poses as her guardian. Curious and creative, Rapunzel fills her days painting, reading, and tracking mysterious lanterns that appear on her birthday. When thief Flynn Rider finds her tower, she seizes the chance to explore the world. Bold and resourceful, she wields frying pans for defense, follows her instincts, and discovers the lanterns are a tribute to the kingdom’s lost princess—herself.',
     scenes: [
       "https://img.youtube.com/vi/ILRs2r6lcHY/hqdefault.jpg", // “I See the Light”
       "https://img.youtube.com/vi/JXnAd8bofTo/hqdefault.jpg", // Frying-pan meet-cute
@@ -47,7 +47,7 @@ const princesses: Princess[] = [
     ],
   },
   {
-    id: "belle",
+    id: 2,
     name: "Belle",
     slug: "belle",
     movieName: "Beauty and the Beast",
@@ -62,7 +62,7 @@ const princesses: Princess[] = [
     ],
   },
   {
-    id: "Jasmine",
+    id: 3,
     name: "Jasmine",
     slug: "jasmine",
     movieName: "Aladdin",
@@ -77,7 +77,7 @@ const princesses: Princess[] = [
     ],
   },
   {
-    id: "pocahontas",
+    id: 4,
     name: "Pocahontas",
     slug: "pocahontas",
     movieName: "Pocahontas",
@@ -92,7 +92,7 @@ const princesses: Princess[] = [
     ],
   },
   {
-    id: "snow-white",
+    id: 5,
     name: "Snow White",
     slug: "snow-white",
     movieName: "Snow White",
@@ -107,7 +107,7 @@ const princesses: Princess[] = [
     ],
   },
   {
-    id: "ariel",
+    id: 6,
     name: "Ariel",
     slug: "ariel",
     movieName: "The Little Mermaid",

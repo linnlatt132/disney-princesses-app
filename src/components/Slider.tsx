@@ -3,6 +3,7 @@ import princesses from "../data/princesses";
 import { AnimatePresence, motion } from "framer-motion";
 import Card from "./Card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
   const [index, setIndex] = useState(0);
@@ -28,7 +29,9 @@ const Slider = () => {
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.4 }}
             >
-              <Card princess={princess} />
+              <Link to={`/detail/${princess.slug}`}>
+                <Card princess={princess} />
+              </Link>
             </motion.div>
           ))}
           {previewCard && (

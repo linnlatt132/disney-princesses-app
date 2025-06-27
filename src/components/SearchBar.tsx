@@ -16,6 +16,8 @@ const SearchBar = ({ data }: SearchBarProps) => {
   const filtered = data.filter((p) =>
     p.name.toLocaleLowerCase().includes(debounceQuery.toLocaleLowerCase())
   );
+
+  const resultName = debounceQuery && filtered.length > 0;
   return (
     <div className="relative w-80">
       {/* Search Bar */}
@@ -31,24 +33,39 @@ const SearchBar = ({ data }: SearchBarProps) => {
 
       {/* Animated result box */}
       <AnimatePresence>
-        {debounceQuery && filtered.length > 0 && (
-          <motion.div
-            key="results"
-            initial={{ opacity: 0, scale: 0.95, y: -10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -10 }}
-            transition={{ duration: 0.25 }}
-            className="absolute top-14 left-0 w-full rounded-xl shadow-lg text-[#454444] bg-[#CCCCCC] z-30 p-2 space-y-1"
-          >
-            {filtered.map((p) => (
-              <Link key={p.id} to={`/detail/${p.id}`}>
-                <div className="text-sm px-3 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
-                  {p.name}
-                </div>
-              </Link>
-            ))}
-          </motion.div>
-        )}
+        {debounceQuery &&
+          (resultName ? (
+            <motion.div
+              key="results"
+              initial={{ opacity: 0, scale: 0.95, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -10 }}
+              transition={{ duration: 0.25 }}
+              className="absolute top-14 left-0 w-full rounded-xl shadow-lg text-[#454444] bg-[#CCCCCC] z-30 p-2 space-y-1"
+            >
+              {filtered.map((p) => (
+                <Link key={p.id} to={`/detail/${p.slug}`}>
+                  <div
+                    onClick={() => setQuery("")}
+                    className="text-sm px-3 py-2 hover:bg-gray-100 rounded-md cursor-pointer"
+                  >
+                    {p.name}
+                  </div>
+                </Link>
+              ))}
+            </motion.div>
+          ) : (
+            <motion.div
+              key="results"
+              initial={{ opacity: 0, scale: 0.95, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -10 }}
+              transition={{ duration: 0.25 }}
+              className="absolute top-14 left-0 w-full rounded-xl shadow-lg text-[#454444] bg-[#CCCCCC] z-30 p-2 space-y-1"
+            >
+              <div className="text-sm px-3 py-2 rounded-md ">no data....</div>
+            </motion.div>
+          ))}
       </AnimatePresence>
     </div>
   );
