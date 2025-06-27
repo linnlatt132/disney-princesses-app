@@ -1,8 +1,11 @@
-import SnowWhite from "../assets/images/princess/SnowWhite.svg?react";
 import { motion } from "framer-motion";
-import Bg from "../assets/images/bg/SnowWhiteBG.svg?react";
+import type { Princess } from "../data/princesses";
 
-const Card = () => {
+type CardProps = {
+  princess: Princess;
+};
+
+const Card = ({ princess }: CardProps) => {
   const imgVariants = {
     rest: { scale: 1, y: 0 },
     hover: { scale: 1.12, y: -9 },
@@ -23,25 +26,27 @@ const Card = () => {
       animate="rest"
       className="relative h-70 mt-52 outline-none hover:cursor-pointer"
     >
-      <Bg className="absolute inset-0" />
+      {/* <Bg className="absolute inset-0" /> */}
+      <div className="absolute inset-0">{princess.bgImg}</div>
       {/* image grow */}
       <motion.div
         variants={imgVariants}
         className="absolute -top-40 translate-x-1/4 origin-bottom z-20 "
         transition={{ type: "spring", stiffness: 160, damping: 12 }}
       >
-        <SnowWhite />
+        {/* <SnowWhite /> */}
+        {princess.personImg}
       </motion.div>
       <motion.div
-        className="flex flex-col absolute bottom-4 left-8 z-30 text-white w-70 text-start"
+        className="flex flex-col absolute bottom-4 left-12 z-30 text-white w-80 text-start"
         variants={textVariants}
         transition={{ type: "tween", duration: 0.25 }}
       >
-        <p className="font-semibold text-[24px] ">Snow White</p>
+        <p className="font-semibold text-[24px] ">{princess.name}</p>
         <div className="space-x-2 flex items-center">
-          <span className="font-thin text-[14px]">Movie</span>
+          <span className="font-thin font-pop text-[14px]">Movie</span>
           <div className="rounded-full h-1 w-1 bg-white "></div>
-          <span className="text-[16px]">Snow White</span>
+          <span className="text-[16px]">{princess.movieName}</span>
         </div>
         <motion.span
           variants={readMoreVariants}
