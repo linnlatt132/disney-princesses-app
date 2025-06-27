@@ -51,7 +51,7 @@ const Slider = () => {
       <div className="relative overflow-hidden px-8 flex space-x-90">
         <AnimatePresence initial={false} custom={direction} mode="popLayout">
           {[...visibleCards, previewCard].map(
-            (princess, i) =>
+            (princess) =>
               princess && (
                 <motion.div
                   key={princess.id}
