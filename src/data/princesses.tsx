@@ -39,7 +39,8 @@ const princesses: Princess[] = [
     personImg: <Rapunzel />,
     bgImg: <RapunzelBg />,
     bgImg2: <RapunzelBg2 />,
-    about: 'Rapunzel has spent her life hidden in a tower, believing the outside world is dangerous. Her magical, seventy-foot hair has healing powers coveted by Mother Gothel, who poses as her guardian. Curious and creative, Rapunzel fills her days painting, reading, and tracking mysterious lanterns that appear on her birthday. When thief Flynn Rider finds her tower, she seizes the chance to explore the world. Bold and resourceful, she wields frying pans for defense, follows her instincts, and discovers the lanterns are a tribute to the kingdom’s lost princess—herself.',
+    about:
+      "Rapunzel has spent her life hidden in a tower, believing the outside world is dangerous. Her magical, seventy-foot hair has healing powers coveted by Mother Gothel, who poses as her guardian. Curious and creative, Rapunzel fills her days painting, reading, and tracking mysterious lanterns that appear on her birthday. When thief Flynn Rider finds her tower, she seizes the chance to explore the world. Bold and resourceful, she wields frying pans for defense, follows her instincts, and discovers the lanterns are a tribute to the kingdom’s lost princess—herself.",
     scenes: [
       "https://img.youtube.com/vi/ILRs2r6lcHY/hqdefault.jpg", // “I See the Light”
       "https://img.youtube.com/vi/JXnAd8bofTo/hqdefault.jpg", // Frying-pan meet-cute
@@ -69,7 +70,7 @@ const princesses: Princess[] = [
     personImg: <Jasmine />,
     bgImg: <JasmineBg />,
     bgImg2: <JasmineBg2 />,
-    about: `Princess Jasmine of Agrabah is born into opulence yet feels caged by palace walls and suffocating tradition. Fiercely independent, sharp-tongued and adventurous, she rejects suitors chosen by law and sneaks into the marketplace disguised as a commoner. There she meets street-smart Aladdin, discovering the world—and herself—beyond gilded gates. Jasmine values honesty, justice and the freedom to choose her own future, confronting manipulative vizier Jafar and challenging her father’s outdated marriage decree. Whether soaring on a magic carpet or defending her people, she proves that a true ruler listens to her heart and her subjects, not to archaic customs.`,
+    about: `Jasmine, the princess of Agrabah, lives in luxury but feels trapped by palace rules and tradition. Independent and adventurous, she disguises herself to explore the marketplace, where she meets Aladdin and glimpses life beyond royal walls. She rejects arranged suitors, values honesty and freedom, and challenges both the manipulative Jafar and her father’s outdated laws. Jasmine seeks to shape her own future, proving that true leadership comes from listening to both heart and people—not following old customs. Brave and compassionate, she rises beyond expectations to become a ruler in her own right.`,
     scenes: [
       "https://img.youtube.com/vi/hZ1Rb9hC4JY/hqdefault.jpg", // “A Whole New World”
       "https://img.youtube.com/vi/IQDfabokzZg/hqdefault.jpg", // “One Jump Ahead”
@@ -84,7 +85,7 @@ const princesses: Princess[] = [
     personImg: <Pocahontas />,
     bgImg: <PocahontasBg />,
     bgImg2: <PocahontasBg2 />,
-    about: `Pocahontas, spirited daughter of Chief Powhatan, roams Virginia’s untouched wilderness with the grace of a deer and the wisdom of Grandmother Willow. She is deeply attuned to nature’s rhythms, listening to every “color of the wind” and following the swirling paths of leaves to guide her choices. When English settlers arrive, Pocahontas befriends explorer John Smith and attempts to bridge two worlds poised for conflict. Courage, empathy and her love for the land lead her to stand between her people and the musket line, averting war. Her story celebrates respect for the earth, open-mindedness toward strangers and the belief that peace begins with understanding.`,
+    about: `Pocahontas, the free-spirited daughter of Chief Powhatan, explores Virginia’s wilderness with grace and wisdom. Deeply connected to nature, she follows the “colors of the wind” to guide her choices. When English settlers arrive, she befriends John Smith and bravely seeks peace between two clashing worlds. With empathy and courage, she stands between her people and conflict, preventing war. Her journey reflects a deep respect for the land, a willingness to understand others, and the belief that harmony is possible through open hearts and minds.`,
     scenes: [
       "https://img.youtube.com/vi/9ThO76peOw0/hqdefault.jpg", // “Colors of the Wind”
       "https://img.youtube.com/vi/uZrg3hhntQY/hqdefault.jpg", // “Just Around the Riverbend”

@@ -57,9 +57,9 @@ const DetailPage = () => {
         </div>
 
         {/* Image and content */}
-        <div className="text-white flex absolute top-35 left-56 space-x-20">
+        <div className="text-white flex absolute top-32 left-56 space-x-20">
           {/* img */}
-          <div className="scale-170 relative top-5">{princess.personImg}</div>
+          <div className="scale-170 relative top-8">{princess.personImg}</div>
 
           {/* content */}
           <div className="px-5">
@@ -80,7 +80,8 @@ const DetailPage = () => {
             </div>
 
             {/* clips */}
-            <div className="flex flex-row space-x-10 mt-6">
+            <div className="mt-6 mb-2">Clips</div>
+            <div className="flex flex-row space-x-10 ">
               {princess.scenes.map((scene, i) => (
                 <img
                   key={i}
