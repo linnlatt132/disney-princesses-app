@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import princesses from "../data/princesses";
 import { motion } from "framer-motion";
 import { ChevronLeft, X } from "lucide-react";
+import { useState } from "react";
 
 const DetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -14,55 +15,106 @@ const DetailPage = () => {
   // const { name, movieName, about, personImg, bgImg2, scenes } = princess;
   const currentIndex = princesses.findIndex((p) => p.id === princess.id);
   const nextPrincess = princesses[(currentIndex + 1) % princesses.length];
-
+  const [isExiting, setIsExiting] = useState(false);
+  const closePage = () => {
+    setIsExiting(true);
+    navigate("/");
+  };
   return (
-    <div className="relative w-full">
+    <motion.div
+      className="relative w-full"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onAnimationComplete={() => {
+        if (isExiting) {
+          navigate("/");
+        }
+      }}
+      transition={{
+        duration: isExiting ? 0.1 : 0.2,
+        ease: "easeInOut",
+      }}
+    >
       <motion.div
         className="flex flex-col"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
       >
-        <div
-          onClick={() => navigate("/")}
-          className=" text-black flex items-center text-2xl justify-end mr-15 mt-10 hover:cursor-pointer"
-        >
-          <X size={30} />
-          Close
+        {/* close button */}
+        <div className=" text-black flex cursor-default select-none items-center text-2xl justify-end mr-15 mt-10 ">
+          <span onClick={closePage} className="flex hover:cursor-pointer">
+            <X size={30} />
+            Close
+          </span>
         </div>
-        {/* bottom bg and name */}
-        <div className="flex justify-between rounded-br-2xl">
-          {/* Name */}
+        {/* bottom bg and names */}
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="flex justify-between rounded-br-2xl cursor-default select-none"
+        >
+          {/* Names */}
           <div className="-rotate-90 transform origin-left flex items-center justify-between space-x-8 mt-110 ml-22">
             <ChevronLeft
               size={30}
               onClick={() => navigate(`/detail/${nextPrincess.slug}`)}
               className="hover:cursor-pointer"
             />
-            <p className="text-[20px] font-thin whitespace-nowrap text-black/50">
+            <p
+              onClick={() => navigate(`/detail/${nextPrincess.slug}`)}
+              className="text-[20px] font-thin whitespace-nowrap text-black/50 hover:cursor-pointer"
+            >
               {nextPrincess.name}
             </p>
             <p className="text-[30px] whitespace-nowrap">{princess.name}</p>
           </div>
 
-          {/* background */}
-          {princess.id === 2 ? (
-            <div className="absolute top-[119px] left-[168px]">
-              {princess.bgImg2}
-            </div>
-          ) : (
-            <div className="absolute top-[119px] left-[154px]">
-              {princess.bgImg2}
-            </div>
-          )}
-        </div>
+          {/* bottom background */}
+          <motion.div
+            layoutId={`bg-${princess.id}`}
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 0 }}
+            transition={{ type: "spring", stiffness: 100, damping: 30 }}
+            className="absolute"
+            style={
+              princess.id === 2
+                ? { top: "119px", left: "168px" }
+                : { top: "119px", left: "154px" }
+            }
+          >
+            {princess.bgImg2}
+          </motion.div>
+        </motion.div>
 
         {/* Image and content */}
         <div className="text-white flex absolute top-32 left-56 space-x-20">
           {/* img */}
-          <div className="scale-170 relative top-8">{princess.personImg}</div>
+          {/* <div className="scale-170 relative top-8">{princess.personImg}</div> */}
+          <motion.div
+            layoutId={`img-${princess.id}`}
+            initial={{ scale: 0.5 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="scale-170 relative top-8"
+          >
+            {princess.personImg}
+          </motion.div>
 
           {/* content */}
-          <div className="px-5">
+          <motion.div
+            className="px-5"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 40 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+          >
             {/* Name and movie name and about */}
             <div>
               <div className="detail-name">{princess.name}</div>
@@ -80,8 +132,22 @@ const DetailPage = () => {
             </div>
 
             {/* clips */}
-            <div className="mt-6 mb-2">Clips</div>
-            <div className="flex flex-row space-x-10 ">
+            <motion.div
+              className="mt-6 mb-2"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 40 }}
+              transition={{ delay: 0.4, duration: 0.4 }}
+            >
+              Clips
+            </motion.div>
+            <motion.div
+              className="flex flex-row space-x-10 "
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 40 }}
+              transition={{ delay: 0.5, duration: 0.4 }}
+            >
               {princess.scenes.map((scene, i) => (
                 <img
                   key={i}
@@ -90,11 +156,11 @@ const DetailPage = () => {
                   alt={`Scene ${i}`}
                 />
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
